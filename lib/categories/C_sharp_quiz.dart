@@ -39,7 +39,7 @@ List<Question> getQuestions() {
     "C# programming language is used to develop -",
     [
       Answer("Web apps", false),
-      Answer("Web apps", false),
+      Answer("Desktop apps", false),
       Answer("Mobiles apps", false),
       Answer("All of the above", true),
     ],

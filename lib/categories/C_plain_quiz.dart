@@ -21,7 +21,7 @@ List<Question> getQuestions() {
       Answer("parameter names", true),
       Answer("data type of parameters", false),
       Answer("return type of function", false),
-      Answer("umber of parameters", false),
+      Answer("number of parameters", false),
     ],
   ));
 

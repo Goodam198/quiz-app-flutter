@@ -50,7 +50,7 @@ List<Question> getQuestions() {
     "How could you retrieve information about a class, as well as create an instance at runtime?",
     [
       Answer("serialization", false),
-      Answer(" abstraction", false),
+      Answer("abstraction", false),
       Answer("dependency injection", false),
       Answer("reflection", true),
     ],

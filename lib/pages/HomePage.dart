@@ -3,7 +3,6 @@ import 'package:quiz_app/pages/Linker.dart';
 
 class HomePage extends StatefulWidget {
 
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -11,8 +10,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   List<Linker> linkList = getLink();
-
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

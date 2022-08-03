@@ -8,7 +8,7 @@ List<Question> getQuestions() {
   list.add(Question(
     "Which of the following types of inheritance is not supported by Python?",
     [
-      Answer("Hybrid Inheritance", false),
+      Answer("Hierarchical Inheritance", false),
       Answer("Multilevel Inheritance", false),
       Answer("None of the above", true),
       Answer("Hybrid Inheritance", false),

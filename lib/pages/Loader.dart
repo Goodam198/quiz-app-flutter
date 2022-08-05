@@ -2,9 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/pages/HomePage.dart';
 
-
-
-
 class Loader extends StatefulWidget {
 
   @override
@@ -17,7 +14,7 @@ class _LoaderState extends State<Loader> {
 
   void checkTimer(){
   Timer(Duration(seconds: 4),() {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) =>  HomePage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) =>  HomePage()));
   });
 }
 
@@ -28,6 +25,7 @@ class _LoaderState extends State<Loader> {
     checkTimer();
 
   }
+
 
   @override
   Widget build(BuildContext context) {

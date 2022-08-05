@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/categories/C_plain_quiz.dart';
 import 'package:quiz_app/pages/Question.dart';
-import 'package:quiz_app/pages/HomePage.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class C_plain extends StatefulWidget {
   const C_plain({Key? key}) : super(key: key);
@@ -51,15 +51,19 @@ class _C_plainState extends State<C_plain> {
                   letterSpacing: 2,
                 ),
               ),
-              Container(
-                height: 10,
-                width: 500,
-                margin: EdgeInsets.symmetric(horizontal: 40),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(2),
-                  color:  Color(0xff00AEEE),
-                ),
+
+              LinearPercentIndicator(
+                barRadius: Radius.circular(2),
+                animation: true,
+                animationDuration: 1000,
+                lineHeight: 10,
+                percent: ((currentQuestionIndex + 1) / questionList.length),
+                progressColor: Color(0xff00AEEE),
+                backgroundColor: Color(0xffC9DBFF),
               ),
+
+
+
               questionWidget(),
               answerList(),
               nextButton(),
@@ -211,11 +215,8 @@ class _C_plainState extends State<C_plain> {
       content: ElevatedButton(
         child: const Text("Go to Home"),
         onPressed: () {
-          Navigator.push(
-
-            context, MaterialPageRoute(builder: (context) => HomePage()),
-
-          );
+          Navigator.of(context).pop();
+          Navigator.of(context).pop();
           setState(() {
             currentQuestionIndex = 0;
             score = 0;

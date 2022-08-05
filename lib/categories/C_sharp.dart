@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/categories/C_sharp_quiz.dart';
 import 'package:quiz_app/pages/Question.dart';
-import 'package:quiz_app/pages/HomePage.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class C_sharp extends StatefulWidget {
 
@@ -15,6 +15,7 @@ class _C_sharpState extends State<C_sharp> {
   int currentQuestionIndex = 0;
   int score = 0;
   Answer? selectedAnswer;
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +49,17 @@ class _C_sharpState extends State<C_sharp> {
                   letterSpacing: 2,
                 ),
               ),
-              Container(
-                height: 10,
-                width: 500,
-                margin: EdgeInsets.symmetric(horizontal: 40),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(2),
-                  color:  Color(0xff00AEEE),
-                ),
+
+              LinearPercentIndicator(
+                barRadius: Radius.circular(2),
+                animation: true,
+                animationDuration: 1000,
+                lineHeight: 10,
+                percent: ((currentQuestionIndex + 1) / questionList.length),
+                progressColor: Color(0xff00AEEE),
+                backgroundColor: Color(0xffC9DBFF),
               ),
+
               questionWidget(),
               answerList(),
               nextButton(),
@@ -67,7 +70,6 @@ class _C_sharpState extends State<C_sharp> {
       ),
     );
   }
-
 
   questionWidget() {
     return Padding(
@@ -208,11 +210,8 @@ class _C_sharpState extends State<C_sharp> {
       content: ElevatedButton(
         child: const Text("Go to Home"),
         onPressed: () {
-          Navigator.push(
-
-            context, MaterialPageRoute(builder: (context) => HomePage()),
-
-          );
+          Navigator.of(context).pop();
+          Navigator.of(context).pop();
           setState(() {
             currentQuestionIndex = 0;
             score = 0;
